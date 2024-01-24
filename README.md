@@ -54,9 +54,11 @@ By default it runs on localhost on port 8081.
 Now you can run the client using  **go run ./client** in the other terminal, but before you do that, make sure that in the **client.go** file, on line 121 - newEmail := CreateEmail(client, "1329999@9999,99")  you put some other email address, as that one might be included in the database and the email address should be unique, so it won't let you add the same email twice and at the moment this is hardcoded on the client, along with some other parameters that I will mention below. 
 If you do have a unique email, you should see in the server response how the email is created, updated, deleted (which is an opt-out flag in this case) and also to get multiple emails in a batch.
 You can have pagination here in the batch, for example on lines 128 till 130 in the same **client.go** file, you will notice these lines of code: 
-
+ <br>
 getEmailBatch(client, 5, 1) // 5 emails on page 1
+ <br>
 getEmailBatch(client, 5, 2) // 5 emails on page 2
+ <br>
 getEmailBatch(client, 5, 3) // 5 emails on page 3
 
 You can play around with the pagination and result rows per page. 
